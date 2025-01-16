@@ -1,0 +1,1 @@
+export default function App() {return <p>Here goes the registration form</p>}
