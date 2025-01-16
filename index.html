@@ -5,11 +5,24 @@
     <link rel="icon" type="image/webp" href="/static/favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comi Dólar | Suscribite al newsletter del dolar</title>
-    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/index.css" />
     <meta
       name="description"
       content="Proporciona un formulario de suscripción al newsletter de Comi Dólar, el cual anuncia diariamente las cotizaciones del dolar blue y el dolar oficial, tanto por notificaciones push como correo y sms."
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function (OneSignal) {
+        await OneSignal.init({
+          appId: "8718ce03-c439-4a9f-b9a5-48ae91d60ac7",
+        });
+      });
+    </script>
   </head>
   <body class="h-full flex flex-col items-center justify-between py-24">
     <header class="p-4 flex flex-col items-center justify-center">
@@ -31,7 +44,28 @@
         la normativa de impuestos y mucho mas!
       </h2>
     </header>
-    <main id="root"></main>
+    <main>
+      <a
+        href="#"
+        class="sp_notify_prompt flex items-center gap-2 bg-green-500 py-3 px-2 rounded-xl hover:bg-green-600 transition-colors duration-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M14.235 19c.865 0 1.322 1.024.745 1.668A4 4 0 0 1 12 22a4 4 0 0 1-2.98-1.332c-.552-.616-.158-1.579.634-1.661l.11-.006zM12 2c1.358 0 2.506.903 2.875 2.141l.046.171l.008.043a8.01 8.01 0 0 1 4.024 6.069l.028.287L19 11v2.931l.021.136a3 3 0 0 0 1.143 1.847l.167.117l.162.099c.86.487.56 1.766-.377 1.864L20 18H4c-1.028 0-1.387-1.364-.493-1.87a3 3 0 0 0 1.472-2.063L5 13.924l.001-2.97A8 8 0 0 1 8.822 4.5l.248-.146l.01-.043a3 3 0 0 1 2.562-2.29l.182-.017z"
+          />
+        </svg>
+        <div class="onesignal-customlink-container"></div>
+      </a>
+      <div class="separator my-8 text-xl font-bold">
+        ---------------------------- y/o -------------------------------
+      </div>
+    </main>
     <footer>
       <p>
         Desarrollado y mantenido por
@@ -42,10 +76,5 @@
         >
       </p>
     </footer>
-    <script
-      charset="UTF-8"
-      src="//web.webpushs.com/js/push/2c149e9931032c133277e904eb9ebe8b_1.js"
-      async
-    ></script>
   </body>
 </html>
